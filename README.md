@@ -7,7 +7,7 @@ Submitted in fulfilment of requirements for degree of Master of Science in Busin
 
 
 ## Requirements
-- 'Python 3.6+'
+- `Python 3.6+`
 - Python packages can be installed via `pip install -r requirements.txt`
 
 ## Data
@@ -21,7 +21,7 @@ Datasets required to run scripts:
 
 ## Running scripts
 
-### 1. data_prep
+### 1. `data_prep.py`
 * Section(s):
   * Seperating final demand from VDFM
   * Extracting and outputting i, g, j, h values
@@ -33,25 +33,25 @@ Datasets required to run scripts:
 * Required dataset(s): VXMD.xlsx, VDFM.xlsx, VIFM.xlsx, VFM.xlsx
 * Output dataset(s): VDFM__c.csv, VDFM_FD.csv, VDFM_igjh.csv, VXMD_igj.csv, VIFM_re.csv, VIFM_gjh.csv, VFM_fjh.csv 
 
-### 2. prop_b
+### 2. `prop_b.py`
 * Section(s): 
   * Building proportionally imputed I/O
 * Required dataset(s): VDFM_igjh.csv, VXMD_igj.csv, VIFM_re.csv
 * Output dataset(s): tz_b.csv
 
-### 3. trade
+### 3. `trade.py`
 * Section(s): 
   * Building trade vector
 * Required dataset(s): VXMD_igj.csv, VIFM_re.csv
 * Output dataset(s): trade.csv
 
-### 4. prop_fct
+### 4. `prop_fct.py`
 * Section(s): 
   * Calculating factor content of trade using the proportionality assumption
 * Required dataset(s): VFM.csv, tz_b.csv, trade.csv
 * Output dataset(s): fct_prop.csv
 
-### 5. constraints
+### 5. `constraints.py`
 * Section(s): 
   * Building Maximum contraints per igjh entry
   * Preparing imported input-output constraints
@@ -60,13 +60,13 @@ Datasets required to run scripts:
 * Required dataset(s): VXMD_igj.csv, VIFM_re.csv
 * Output dataset(s): VIFM_igjh_constraints.csv, VXMD_igjh_constraints.csv, max_constraints.csv
 
-### 6. random_local_optimum
+### 6. `random_local_optimum.py`
 * Section(s): 
   * Building random local optimum
 * Required dataset(s): max_constraints.csv, tz_b.csv, VDFM_igjh.csv, VFM.csv, trade.csv, VXMD_igj.csv, VIFM_gjh.csv
 * Output dataset(s): igjh_max.csv, igjh_max_sorted.csv, rlo_B.csv, MC_rlo.csv, MAPE_rlo.csv
 
-### 7. MC_max
+### 7. `MC_max.py`
 * Section(s): 
   * Simulating maximum bias in factor content of trade
     * _Runs Monte Carlo simulation based on MC_count_
