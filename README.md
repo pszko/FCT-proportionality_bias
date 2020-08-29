@@ -22,11 +22,7 @@ Datasets required to run scripts:
 ## Running the scripts
 
 #### 1. data_prep
-* Required datasets:
-  * VXMD.xlsx
-  * VDFM.xlsx
-  * VIFM.xlsx
-  * VFM.xlsx
+* Required dataset(s): VXMD.xlsx, VDFM.xlsx, VIFM.xlsx, VFM.xlsx
 
 * Sections:
   * Seperating final demand from VDFM
