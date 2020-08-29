@@ -21,10 +21,9 @@ Datasets required to run scripts:
 
 ## Running the scripts
 
-#### 1. data_prep
+### 1. data_prep
 * Required dataset(s): VXMD.xlsx, VDFM.xlsx, VIFM.xlsx, VFM.xlsx
-
-* Sections:
+* Section(s):
   * Seperating final demand from VDFM
   * Extracting and outputting i, g, j, h values
   * Reshaping VDFM to VDFM_igjh
@@ -32,18 +31,13 @@ Datasets required to run scripts:
   * Reshaping VIFM to VIFM_re
   * Reshaping VIFM_re to VIFM_gjh
   * Reshaping VFM to VFM_fjh
-
 * Output dataset(s): VDFM__c.csv, VDFM_FD.csv, VDFM_igjh.csv, VXMD_igj.csv, VIFM_re.csv, VIFM_gjh.csv, VFM_fjh.csv 
 
-#### 2. prop_b
-* Required datasets:
-  * VDFM_igjh.csv
-  * VXMD_igj.csv
-  * VIFM_re.csv
-
+### 2. prop_b
+* Required dataset(s): VDFM_igjh.csv, VXMD_igj.csv, VIFM_re.csv
 * Section(s): 
   * Building proportionally imputed I/O
-output dataset: tz_b.csv
+* Output dataset(s): tz_b.csv
 
 - 3_trade
 required datasets: VXMD_igj.csv, VIFM_re.csv
