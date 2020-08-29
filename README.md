@@ -1,7 +1,7 @@
 # Genetic Algorithms Measuring Bias in the Proportionality Assumption of Factor Content of Trade
 
 ## Introduction
-The following scripts have been developed with the purpose of estimating the maximum potential bias of the proportionality assumption of factor content of trade.
+The following scripts have been developed with the purpose of estimating the maximum potential bias in the proportionality assumption of factor content of trade.
 
 Code submitted in fulfilment of requirements for degree of Master of Science in Business Analytics at HEC Montréal.
 
@@ -21,16 +21,12 @@ Datasets required to run scripts:
 
 ## Running the scripts
 
-### 1. _data_prep_
-* Item 1
-* Item 2
-  * Item 2a
-  * Item 2b
-required datasets: 
-- VXMD.xlsx
-- VDFM.xlsx
-- VIFM.xlsx
-- VFM.xlsx
+#### 1. _data_prep_
+* Required datasets:
+  * VXMD.xlsx
+  * VDFM.xlsx
+  * VIFM.xlsx
+  * VFM.xlsx
 
 Sections:
 - Seperating final demand from VDFM
