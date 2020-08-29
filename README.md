@@ -1,9 +1,9 @@
-#Genetic Algorithms Measuring Bias in the Proportionality Assumption of Factor Content of Trade
+# Genetic Algorithms Measuring Bias in the Proportionality Assumption of Factor Content of Trade
 
 ## Introduction
 The following scripts have been developed with the purpose of estimating the maximum potential bias of the proportionality assumption of factor content of trade.
 
-Code submitted in fulfilment of requirements for the degree of Master of Science in Business Analytics at HEC Montréal.
+Code submitted in fulfilment of requirements for degree of Master of Science in Business Analytics at HEC Montréal.
 
 
 ## Requirements
@@ -11,7 +11,7 @@ Code submitted in fulfilment of requirements for the degree of Master of Science
 - Python packages can be installed via `pip install -r requirements.txt`
 
 ## Data
-The following paper uses the [GTAP 9](https://www.gtap.agecon.purdue.edu/databases/v9/) database gathered by the Global Trade Analysis Project at Purdue University.
+The following paper uses the [GTAP 9 database](https://www.gtap.agecon.purdue.edu/databases/v9/) gathered by the Global Trade Analysis Project at Purdue University.
 
 Datasets required to run scripts:
 1. _VDFM_ – Domestic input-output matrices 
@@ -21,17 +21,30 @@ Datasets required to run scripts:
 
 ## Running the scripts
 
-- 1_data_prep
-required datasets: VXMD.xlsx, VDFM.xlsx, VIFM.xlsx, VFM.xlsx
-sections:
-	Seperating final demand from VDFM
-	Extracting and outputting i, g, j, h values
-	Reshaping VDFM to VDFM_igjh
-	Reshaping VXMD to VXMD_igj
-	Reshaping VIFM to VIFM_re
-	Reshaping VIFM_re to VIFM_gjh
-	Reshaping VFM to VFM_fjh
-output datasets: VDFM__c.csv, VDFM_FD.csv, VDFM_igjh.csv, VXMD_igj.csv, VIFM_re.csv, VIFM_gjh.csv, VFM_fjh.csv 
+1. _data_prep_
+required datasets: 
+- VXMD.xlsx
+- VDFM.xlsx
+- VIFM.xlsx
+- VFM.xlsx
+
+Sections:
+- Seperating final demand from VDFM
+- Extracting and outputting i, g, j, h values
+- Reshaping VDFM to VDFM_igjh
+- Reshaping VXMD to VXMD_igj
+- Reshaping VIFM to VIFM_re
+- Reshaping VIFM_re to VIFM_gjh
+- Reshaping VFM to VFM_fjh
+
+Output datasets: 
+- VDFM__c.csv
+- VDFM_FD.csv
+- VDFM_igjh.csv
+- VXMD_igj.csv
+- VIFM_re.csv
+- VIFM_gjh.csv
+- VFM_fjh.csv 
 
 - 2_prop_b
 required datasets: VDFM_igjh.csv, VXMD_igj.csv, VIFM_re.csv
