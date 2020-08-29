@@ -74,23 +74,15 @@ Datasets required to run scripts:
 * Required dataset(s): tz_b.csv, VDFM_igjh.csv, VFM.csv, trade.csv, VXMD_igj.csv, VIFM_gjh.csv
 * Output dataset(s): MCs_max.csv, MAPE_max.csv, *box_(x).csv*
 
+### 8. `MC_reqs.py`
+* Section(s): 
+  * Simulating maximum bias in factor content of trade
+    * _Calculate required simulations for maximization framework or likely framework_
+* Required dataset(s): MCs_max.csv
 
-- 8_MC_likely
-required datasets: tz_b.csv, VDFM_igjh.csv, VFM.csv, trade.csv, VXMD_igj.csv, VIFM_gjh.csv
-section: Simulating likely factor content of trade
-output datasets: MCs_likely.csv, MAPE_likely.csv.csv
-**Script runs Monte Carlo simulation based on MC_count**
-**Script can be reused to run additional simulations - merging datasets not in scope**
-
-- 9_MC_reqs
-required datasets: MCs_max.csv, MCs_likely.csv
-section: Simulating maximum factor content of trade
-	**Script can either calculate required simulations for maximization framework or likely framework**
-
-- 10_GA
-required datasets: tz_b.csv, VDFM_igjh.csv, VFM.csv, trade.csv, VXMD_igj.csv, VIFM_gjh.csv
-section: GA for estimating maximum factor content of trade
-output dataset: GA_scores_2_1m.csv
-**To load initial population (lines 131-136), box_df.to_csv from 7_MC_max (lines 122-123) needs to be uncommented**
-
-
+### 9. `GA_1.py`
+* Section(s): 
+  * GA for estimating maximum factor content of trade
+    * _To load initial population (lines 131-136), box_df.to_csv from 7_MC_max (lines 122-123) needs to be uncommented_
+* Required dataset(s): tz_b.csv, VDFM_igjh.csv, VFM.csv, trade.csv, VXMD_igj.csv, VIFM_gjh.csv
+* Output dataset(s): GA_scores_2_1m.csv
