@@ -33,14 +33,7 @@ Datasets required to run scripts:
   * Reshaping VIFM_re to VIFM_gjh
   * Reshaping VFM to VFM_fjh
 
-* Output dataset(s): 
-  * VDFM__c.csv
-  * VDFM_FD.csv
-  * VDFM_igjh.csv
-  * VXMD_igj.csv
-  * VIFM_re.csv
-  * VIFM_gjh.csv
-  * VFM_fjh.csv 
+* Output dataset(s): VDFM__c.csv, VDFM_FD.csv, VDFM_igjh.csv, VXMD_igj.csv, VIFM_re.csv, VIFM_gjh.csv, VFM_fjh.csv 
 
 #### 2. prop_b
 * Required datasets:
