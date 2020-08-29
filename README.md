@@ -3,7 +3,7 @@
 ## Introduction
 The following scripts have been developed with the purpose of estimating the maximum potential bias in the proportionality assumption of factor content of trade.
 
-Code submitted in fulfilment of requirements for degree of Master of Science in Business Analytics at HEC Montréal.
+Submitted in fulfilment of requirements for degree of Master of Science in Business Analytics at HEC Montréal.
 
 
 ## Requirements
@@ -21,34 +21,39 @@ Datasets required to run scripts:
 
 ## Running the scripts
 
-#### 1. _data_prep_
+#### 1. data_prep
 * Required datasets:
   * VXMD.xlsx
   * VDFM.xlsx
   * VIFM.xlsx
   * VFM.xlsx
 
-Sections:
-- Seperating final demand from VDFM
-- Extracting and outputting i, g, j, h values
-- Reshaping VDFM to VDFM_igjh
-- Reshaping VXMD to VXMD_igj
-- Reshaping VIFM to VIFM_re
-- Reshaping VIFM_re to VIFM_gjh
-- Reshaping VFM to VFM_fjh
+* Sections:
+  * Seperating final demand from VDFM
+  * Extracting and outputting i, g, j, h values
+  * Reshaping VDFM to VDFM_igjh
+  * Reshaping VXMD to VXMD_igj
+  * Reshaping VIFM to VIFM_re
+  * Reshaping VIFM_re to VIFM_gjh
+  * Reshaping VFM to VFM_fjh
 
-Output datasets: 
-- VDFM__c.csv
-- VDFM_FD.csv
-- VDFM_igjh.csv
-- VXMD_igj.csv
-- VIFM_re.csv
-- VIFM_gjh.csv
-- VFM_fjh.csv 
+* Output dataset(s): 
+  * VDFM__c.csv
+  * VDFM_FD.csv
+  * VDFM_igjh.csv
+  * VXMD_igj.csv
+  * VIFM_re.csv
+  * VIFM_gjh.csv
+  * VFM_fjh.csv 
 
-- 2_prop_b
-required datasets: VDFM_igjh.csv, VXMD_igj.csv, VIFM_re.csv
-section: Building proportionally imputed I/O
+#### 2. prop_b
+* Required datasets:
+  * VDFM_igjh.csv
+  * VXMD_igj.csv
+  * VIFM_re.csv
+
+* Section(s): 
+  * Building proportionally imputed I/O
 output dataset: tz_b.csv
 
 - 3_trade
