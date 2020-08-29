@@ -7,7 +7,7 @@ Submitted in fulfilment of requirements for degree of Master of Science in Busin
 
 
 ## Requirements
-- `Python 3.6+`
+- 'Python 3.6+'
 - Python packages can be installed via `pip install -r requirements.txt`
 
 ## Data
@@ -69,8 +69,8 @@ Datasets required to run scripts:
 ### 7. MC_max
 * Section(s): 
   * Simulating maximum bias in factor content of trade
-    * _Script runs Monte Carlo simulation based on MC_count_
-    * _Script can be reused to run additional simulations - merging datasets not in scope_
+    * _Runs Monte Carlo simulation based on MC_count_
+    * _Can be reused to run additional simulations - merging datasets not in scope_
 * Required dataset(s): tz_b.csv, VDFM_igjh.csv, VFM.csv, trade.csv, VXMD_igj.csv, VIFM_gjh.csv
 * Output dataset(s): MCs_max.csv, MAPE_max.csv, *box_(x).csv*
 
