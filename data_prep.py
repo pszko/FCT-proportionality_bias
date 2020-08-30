@@ -2,7 +2,7 @@ from __init__ import *
 
 # ---Seperating final demand from VDFM------------------------------------------
 # ------------------------------------------------------------------------------
-stopwatch.start()
+stopwatch.start() 
 
 # ---Loading data
 VDFM = pd.read_excel (path + 'VDFM.xlsx')
