@@ -1,11 +1,17 @@
 from __init__ import *
 
-# ---Seperating final demand from VDFM------------------------------------------
-# ------------------------------------------------------------------------------
-stopwatch.start() 
-
 # ---Loading data
 VDFM = pd.read_excel (path + 'VDFM.xlsx')
+
+VXMD = pd.read_excel (path + 'VXMD.xlsx')
+
+VIFM = pd.read_excel (path + 'VIFM.xlsx')
+
+VFM = pd.read_excel (path + 'VFM.xlsx')
+
+# ---Seperating final demand from VDFM------------------------------------------
+# ------------------------------------------------------------------------------
+stopwatch.start()
 
 # ---Creating output dataframes
 VDFM__c = pd.DataFrame(columns = ['dim1', 'dim2', 'dim3', 'Value'])
@@ -147,15 +153,6 @@ print("\n Reshaping VDFM to VDFM_igjh", stopwatch.elapsed())
 # ------------------------------------------------------------------------------
 stopwatch.start()
 
-# ---Loading data
-VXMD = pd.read_excel (path + 'VXMD.xlsx')
-
-# with open(path + 'list_ig.txt', 'r') as filehandle:
-#     list_ig = json.load(filehandle)
-#
-# with open(path + 'list_j.txt', 'r') as filehandle:
-#     list_j = json.load(filehandle)
-
 # ---Identifying table columns
 # dim1 = output sector (g)
 # dim2 = output country (i)
@@ -196,9 +193,6 @@ print("\n Reshaping VXMD to VXMD_igj", stopwatch.elapsed())
 # ---Reshaping VIFM to VIFM_2d-------------------------------------------------
 # ------------------------------------------------------------------------------
 stopwatch.start()
-
-# ---Loading data
-VIFM = pd.read_excel (path + 'VIFM.xlsx')
 
 # ---Identifying table columns
 # dim1 = output sector (g)
@@ -301,12 +295,6 @@ print("\n Reshaping VIFM_2d to VIFM_gj", stopwatch.elapsed())
 # ---Reshaping VFM to VFM_fjh---------------------------------------------------
 # ------------------------------------------------------------------------------
 stopwatch.start()
-
-# ---Loading data
-VFM = pd.read_excel (path + 'VFM.xlsx')
-
-# with open(path + 'list_jh.txt', 'r') as filehandle:
-#     list_jh = json.load(filehandle)
 
 # ---Identifying table columns
 # dim1 = factors (f)
