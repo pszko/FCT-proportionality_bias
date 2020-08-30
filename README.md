@@ -21,49 +21,39 @@ Datasets required to run scripts:
 
 ## Running scripts
 
-### 1. `data_prep.py`
+### 1. `data_prep.py`Prepares data for all further scripts. 
 * Section(s):
   * Seperating final demand from VDFM
-  * Extracting and outputting i, g, j, h values
+  * Extracting and outputting i, g, j, h values and combinations
   * Reshaping VDFM to VDFM_igjh
   * Reshaping VXMD to VXMD_igj
-  * Reshaping VIFM to VIFM_re
-  * Reshaping VIFM_re to VIFM_gjh
+  * Reshaping VIFM to VIFM_2d
+  * Reshaping VIFM_2d to VIFM_gjh
   * Reshaping VFM to VFM_fjh
 * Required dataset(s): VXMD.xlsx, VDFM.xlsx, VIFM.xlsx, VFM.xlsx
-* Output dataset(s): VDFM__c.csv, VDFM_FD.csv, VDFM_igjh.csv, VXMD_igj.csv, VIFM_re.csv, VIFM_gjh.csv, VFM_fjh.csv 
+* Output dataset(s): list_i.txt, list_g.txt, list_j.txt, list_h.txt, list_ig.txt, list_jh.txt, VDFM_igjh.csv, VXMD_igj.csv, VIFM_2d.csv, VIFM_gjh.csv, VFM_fjh.csv 
 
-### 2. `prop_b.py`
+### 2. `prop_fct.py`
 * Section(s): 
   * Building proportionally imputed I/O
-* Required dataset(s): VDFM_igjh.csv, VXMD_igj.csv, VIFM_re.csv
-* Output dataset(s): tz_b.csv
-
-### 3. `trade.py`
-* Section(s): 
-  * Building trade vector
-* Required dataset(s): VXMD_igj.csv, VIFM_re.csv
-* Output dataset(s): trade.csv
-
-### 4. `prop_fct.py`
-* Section(s): 
+  * Building trade matrix
   * Calculating factor content of trade using the proportionality assumption
-* Required dataset(s): VFM.csv, tz_b.csv, trade.csv
+* Required dataset(s): VDFM_igjh.csv, VXMD_igj.csv, VIFM_2d.csv, VFM_fjh.csv
 * Output dataset(s): fct_prop.csv
 
-### 5. `constraints.py`
+### 5. `constraints.py` 
 * Section(s): 
   * Building Maximum contraints per igjh entry
   * Preparing imported input-output constraints
   * Preparing bilateral trade constraints
   * Calculating Min from max contraints for each igjh
-* Required dataset(s): VXMD_igj.csv, VIFM_re.csv
+* Required dataset(s): VXMD_igj.csv, VIFM_2d.csv
 * Output dataset(s): VIFM_igjh_constraints.csv, VXMD_igjh_constraints.csv, max_constraints.csv
 
 ### 6. `random_local_optimum.py`
 * Section(s): 
   * Building random local optimum
-* Required dataset(s): max_constraints.csv, tz_b.csv, VDFM_igjh.csv, VFM.csv, trade.csv, VXMD_igj.csv, VIFM_gjh.csv
+* Required dataset(s): max_constraints.csv, tz_b.csv, VDFM_igjh.csv, VFM_fjh.csv, trade.csv, VXMD_igj.csv, VIFM_gjh.csv
 * Output dataset(s): igjh_max.csv, igjh_max_sorted.csv, rlo_B.csv, MC_rlo.csv, MAPE_rlo.csv
 
 ### 7. `MC_max.py`
@@ -71,7 +61,7 @@ Datasets required to run scripts:
   * Simulating maximum bias in factor content of trade
     * _Runs Monte Carlo simulation based on MC_count_
     * _Can be reused to run additional simulations - merging datasets not in scope_
-* Required dataset(s): tz_b.csv, VDFM_igjh.csv, VFM.csv, trade.csv, VXMD_igj.csv, VIFM_gjh.csv
+* Required dataset(s): tz_b.csv, VDFM_igjh.csv, VFM_fjh.csv, trade.csv, VXMD_igj.csv, VIFM_gjh.csv
 * Output dataset(s): MCs_max.csv, MAPE_max.csv, *box_(x).csv*
 
 ### 8. `MC_reqs.py`
@@ -84,5 +74,5 @@ Datasets required to run scripts:
 * Section(s): 
   * GA for estimating maximum factor content of trade
     * _To load initial population (lines 131-136), box_df.to_csv from 7_MC_max (lines 122-123) needs to be uncommented_
-* Required dataset(s): tz_b.csv, VDFM_igjh.csv, VFM.csv, trade.csv, VXMD_igj.csv, VIFM_gjh.csv
+* Required dataset(s): tz_b.csv, VDFM_igjh.csv, VFM_fjh.csv, trade.csv, VXMD_igj.csv, VIFM_gjh.csv
 * Output dataset(s): GA_scores_2_1m.csv
