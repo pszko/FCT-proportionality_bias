@@ -32,7 +32,7 @@ with open(path + 'list_f.txt', 'r') as filehandle:
     list_f = json.load(filehandle)
 
 
-# ---GA with mutations----------------------------------------------------------
+# ---Performing GA with mutations-----------------------------------------------
 # ------------------------------------------------------------------------------
 
 # ---Defining the Leontief inverse with {F_i  = D〖(I-B)〗^(-1) T_i}

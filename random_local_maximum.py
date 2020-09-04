@@ -82,7 +82,7 @@ for column in VXMD_igj:
 # VXMD_igjh_constraints.to_csv(path + 'VXMD_igjh_constraints.csv')
 
 
-# ---Calculating Min from max contraints for each igjh--------------------------
+# ---Calculating Min given max constraints for each igjh--------------------------
 # ------------------------------------------------------------------------------
 # ---Extracting values from dataframes
 VXMD_igjh_constraints = VXMD_igjh_constraints.values
@@ -95,11 +95,11 @@ max_constraint = np.fmin(VXMD_igjh_constraints, VIFM_igjh_constraints)
 # max_constrain_df = pd.DataFrame(data=max_constraint, index=list_ig, columns=list_jh)
 # max_constrain_df.to_csv(path + 'max_constraints.csv')
 
-print("\n Building Maximum contraints per igjh entry", stopwatch.elapsed())
+print("\n Calculating Maximum contraints per igjh entry", stopwatch.elapsed())
 # ---Time: 8627.236
 
 
-# ---Building random local maximum----------------------------------------------
+# ---Finding random local maximum----------------------------------------------
 # ------------------------------------------------------------------------------
 stopwatch.start()
 

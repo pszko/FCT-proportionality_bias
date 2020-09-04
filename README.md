@@ -3,7 +3,7 @@
 ## Introduction
 The following scripts have been developed with the purpose of estimating the maximum potential bias in the proportionality assumption of factor content of trade.
 
-Submitted in fulfilment of requirements for degree of Master of Science in Business Analytics at HEC Montréal.
+Submitted in fulfilment of requirements for the degree of Master of Science in Business Analytics at HEC Montréal.
 
 
 ## Requirements
@@ -23,7 +23,7 @@ Datasets required to run scripts:
 
 #### 1. `data_prep.py`
 * Section(s):
-  * Seperating final demand from VDFM
+  * Separating final demand from VDFM
   * Extracting and outputting i, g, j, h values and combinations
   * Reshaping VDFM to VDFM_igjh
   * Reshaping VXMD to VXMD_igj
@@ -45,28 +45,28 @@ Datasets required to run scripts:
 * Section(s):
   * Preparing imported input-output constraints
   * Preparing bilateral trade constraints
-  * Calculating Min from max contraints for each igjh
-  * Building random local maximum
+  * Calculating Min given max constraints for each igjh
+  * Finding random local maximum
 * Required dataset(s): VDFM_igjh.csv, VXMD_igj.csv, VIFM_2d.csv, VIFM_gjh.csv, FCT_prop.csv, VFM_fjh.csv
 * Output dataset(s): MC_rlo.csv, MAPE_rlo.csv
 
 #### 4. `MC_max.py`
 * Section(s):
   * Simulating maximum bias in factor content of trade
-    * _Runs number of Monte Carlo simulation based on MC_count (line 126)_
+    * _Runs a number of Monte Carlo simulation, where the number is based on MC_count (line 126)_
     * _Outputs B matrix for MMAPEs greater than 200 (lines 146-148) for later use in Genetic Algorithms_    
-  * Simulating requirement estimation
+  * Estimating the number of simulations required
 * Required dataset(s): VDFM_igjh.csv, VFM_fjh.csv, VXMD_igj.csv, VIFM_gjh.csv, FCT_prop.csv
 * Output dataset(s): MCs_max.csv, MAPE_max.csv, *box_(x).csv*
 
 #### 5. `GA_cross_mutate.py`
 * Section(s):
-  * GA with crossovers and mutations
+  * Performing GA with crossovers and mutations
 * Required dataset(s): VDFM_igjh.csv, VFM_fjh.csv, VXMD_igj.csv, VIFM_gjh.csv, FCT_prop.csv, *box_(x).csv*
 * Output dataset(s): GA_cross_mutate_scores.csv
 
-#### 6. `GA_cross_mutate.py`
+#### 6. `GA_mutate.py`
 * Section(s):
-  * GA with only mutations
+  * Performing GA with only mutations
 * Required dataset(s): VDFM_igjh.csv, VFM_fjh.csv, VXMD_igj.csv, VIFM_gjh.csv, FCT_prop.csv, *box_(x).csv*
 * Output dataset(s): GA_cross_mutate_scores.csv

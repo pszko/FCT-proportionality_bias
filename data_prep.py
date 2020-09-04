@@ -9,7 +9,7 @@ VIFM = pd.read_excel (path + 'VIFM.xlsx')
 
 VFM = pd.read_excel (path + 'VFM.xlsx')
 
-# ---Seperating final demand from VDFM------------------------------------------
+# ---Separating final demand from VDFM------------------------------------------
 # ------------------------------------------------------------------------------
 stopwatch.start()
 

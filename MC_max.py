@@ -163,7 +163,7 @@ print("\n Simulating maximum factor content of trade", stopwatch.elapsed())
 # ---Time: 1381.717
 
 
-# ---Simulating requirement estimation------------------------------------------
+# ---Estimating the number of simulations required------------------------------
 # ------------------------------------------------------------------------------
 stopwatch.start()
 

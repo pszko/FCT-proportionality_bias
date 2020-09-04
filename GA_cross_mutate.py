@@ -19,7 +19,7 @@ tz_fct = tz_fct.values
 with open(path + 'list_j.txt', 'r') as filehandle:
     list_j = json.load(filehandle)
 
-# ---GA with crossovers and mutations-------------------------------------------
+# ---Performing GA with crossovers and mutations--------------------------------
 # ------------------------------------------------------------------------------
 
 # ---Defining bubble sorting
