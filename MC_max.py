@@ -123,27 +123,28 @@ def MMAPE(tz_fct, sim_fct):
     return (np.mean(np.abs((tz_fct - sim_fct) / tz_fct))) * 100
 
 # ---Running MC simulations based on MC_count
-MC_count = 10000
+MC_count = 10
 sim_dict = {}
 MAPE_dict = {}
 MPE_dict = {}
 
 for x in range(MC_count):
-    print("sim: ", x)
+    # print("sim: ", x)
     shake = shaking(list_ig, list_jh, VXMD_igj, VIFM_gjh, VDFM_igjh)
 
     box = VDFM_igjh + shake
     trade = trade_mx(shake, VXMD_igj, list_j)
 
+    new_list_j = [j + "-" + str(x) for j in list_j]
+
     sim = leontief(VFM, box, trade)
-    # sim_df = pd.DataFrame(data = sim, index = list_f, columns = new_list_j)
-    # sim_dict[x] = sim_df
+    sim_df = pd.DataFrame(data = sim, index = list_f, columns = new_list_j)
+    sim_dict[x] = sim_df
 
     MMAPEc = MMAPE(tz_fct, sim)
-    # MAPEc_df = pd.DataFrame(data = MAPEc, index = list_f, columns = new_list_j)
-    # MAPE_dict[x] = MAPEc_df
-    print(MMAPEc)
-    # if MMAPEc > 200:
+    MAPE_dict[x] = pd.DataFrame(data = MMAPEc, index = list_f, columns = new_list_j)
+    # print(MAPE_dict[x])
+    # if MAPE_dict[x] > 200:
     #     box_df = pd.DataFrame(data = shake)
     #     box_df.to_csv(path + 'box_' + str(x) + '.csv')
 
@@ -200,5 +201,5 @@ reqs_df = pd.DataFrame(data = reqs_arr, index = list_f, columns = list_j)
 # ---printing requirements
 print(reqs_df.max(axis=1))
 
-print("\n Simulating maximum factor content of trade", stopwatch.elapsed())
+print("\n Estimating the number of simulations required", stopwatch.elapsed())
 # ---Time: 0.04

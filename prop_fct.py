@@ -92,6 +92,7 @@ tz_b = VDFM_igjh.values
 
 VDFM_igjh = VDFM_igjh.values
 
+VXMD_igj = VXMD_igj.set_index('Unnamed: 0')
 VXMD_igj = VXMD_igj.values
 
 # ---Removing domestic input-outputs

@@ -89,11 +89,11 @@ VXMD_igjh_constraints = VXMD_igjh_constraints.values
 VIFM_igjh_constraints = VIFM_igjh_constraints.values
 
 # ---Calculating Min per igjh
-max_constraint = np.fmin(VXMD_igjh_constraints, VIFM_igjh_constraints)
+max_constraints = np.fmin(VXMD_igjh_constraints, VIFM_igjh_constraints)
 
 # ---Outputting max_constraints
-# max_constrain_df = pd.DataFrame(data=max_constraint, index=list_ig, columns=list_jh)
-# max_constrain_df.to_csv(path + 'max_constraints.csv')
+max_constraints_df = pd.DataFrame(data=max_constraints, index=list_ig, columns=list_jh)
+# max_constraints_df.to_csv(path + 'max_constraints.csv')
 
 print("\n Calculating Maximum contraints per igjh entry", stopwatch.elapsed())
 # ---Time: 8627.236
@@ -102,6 +102,8 @@ print("\n Calculating Maximum contraints per igjh entry", stopwatch.elapsed())
 # ---Finding random local maximum----------------------------------------------
 # ------------------------------------------------------------------------------
 stopwatch.start()
+
+VXMD_igj = VXMD_igj.values
 
 # ---Defining trade vectors
 def trade_mx(shake, VXMD_igj, list_j):
