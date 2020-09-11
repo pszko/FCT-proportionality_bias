@@ -158,7 +158,7 @@ scores, pop = bubbleSort(scores, pop)
 
 # ---Crossing and mutating population
 count = 0
-while count < 1500 and np.allclose(scores, scores[1], rtol=1e-09, atol=1e-09) == False:
+while count < 3300 and np.allclose(scores, scores[1], rtol=1e-09, atol=1e-09) == False:
     print("Runtime", stopwatch.elapsed())
     stopwatch.start()
     child = crossNmutate()
